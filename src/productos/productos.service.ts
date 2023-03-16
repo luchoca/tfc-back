@@ -1,12 +1,17 @@
 import { Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
 import { CreateProductoDto } from './dto/create-producto.dto';
 import { UpdateProductoDto } from './dto/update-producto.dto';
-import { Producto } from './entities/producto.entity';
+import { Producto, ProductoDocument } from './schema/producto.schema';
 
 @Injectable()
 export class ProductosService {
   private productos: Producto[];
-  constructor() {
+  constructor(
+    @InjectModel(Producto.name)
+    private productoModule: Model<ProductoDocument>,
+  ) {
     this.productos = [
       {
         id: 1,
@@ -15,10 +20,27 @@ export class ProductosService {
         precio: 500,
         image: './img/tfc1.jpg',
       },
+      {
+        id: 2,
+        nombre: 'TFC 2',
+        stock: 10,
+        precio: 400,
+        image: './img/tfc1.jpg',
+      },
+      {
+        id: 3,
+        nombre: 'TFC 3 ',
+        stock: 10,
+        precio: 450,
+        image: './img/tfc1.jpg',
+      },
     ];
   }
-
   create(createProductoDto: CreateProductoDto) {
+    return this.productoModule.create(createProductoDto);
+  }
+
+  save(createProductoDto: CreateProductoDto) {
     return this.productos.push(createProductoDto);
   }
 

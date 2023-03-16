@@ -1,9 +1,9 @@
-import { Module } from '@nestjs/common';
-import { CarritoService } from './carrito.service';
-import { CarritoController } from './carrito.controller';
-import { MongooseModule } from '@nestjs/mongoose';
-import { Producto, ProductoSchema } from 'src/productos/schema/producto.schema';
-import { CarritoSchema } from './schemas/carrito.schema';
+import { Module } from "@nestjs/common";
+import { CarritoService } from "./carrito.service";
+import { CarritoController } from "./carrito.controller";
+import { MongooseModule } from "@nestjs/mongoose";
+import { Producto, ProductoSchema } from "src/productos/schema/producto.schema";
+import { Carrito, CarritoSchema } from "./schemas/carrito.schema";
 
 @Module({
   imports: [
@@ -13,7 +13,7 @@ import { CarritoSchema } from './schemas/carrito.schema';
         schema: ProductoSchema,
       },
       {
-        name: CarritoModule.name,
+        name: Carrito.name,
         schema: CarritoSchema,
       },
     ]),

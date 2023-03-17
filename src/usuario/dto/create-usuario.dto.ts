@@ -1,7 +1,8 @@
 import { Producto } from 'src/productos/schema/producto.schema';
 
 export class CreateUsuarioDto {
-  idUsuario: number;
+  idUsuario: string;
   email: string;
+  password: string;
   prodComprados: Producto[];
 }

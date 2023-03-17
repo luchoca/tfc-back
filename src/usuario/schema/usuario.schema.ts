@@ -6,10 +6,12 @@ export type UsuarioDocument = Usuario & Document;
 @Schema()
 export class Usuario {
   @Prop()
-  idUsuario: number;
+  idUsuario: string;
   @Prop()
   email: string;
   @Prop()
-  prodComprados: Producto[];
+  password: string;
+  @Prop()
+  productosPersonalizados?: Producto[]
 }
 export const UsuarioSchema = SchemaFactory.createForClass(Usuario);

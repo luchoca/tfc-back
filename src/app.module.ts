@@ -5,6 +5,7 @@ import { ProductosModule } from "./productos/productos.module";
 import { CarritoModule } from "./carrito/carrito.module";
 import { UsuarioModule } from "./usuario/usuario.module";
 import { MongooseModule } from "@nestjs/mongoose";
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { MongooseModule } from "@nestjs/mongoose";
     MongooseModule.forRoot(
       "mongodb+srv://luchoca:12345@cluester1.cf3pjgk.mongodb.net/test"
     ),
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

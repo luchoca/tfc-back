@@ -12,6 +12,8 @@ export class Usuario {
   @Prop()
   password: string;
   @Prop()
-  productosPersonalizados?: Producto[]
+  productosPersonalizados?: Producto[];
+  @Prop()
+  productosComprado?: Producto[];
 }
 export const UsuarioSchema = SchemaFactory.createForClass(Usuario);

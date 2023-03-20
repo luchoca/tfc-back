@@ -38,7 +38,7 @@ export class ProductosController {
     return this.productosService.update(id, updateProductoDto);
   }
 
-  @Delete(":id")
+  @Delete("delete/:id")
   remove(@Param("id") id: number) {
     return this.productosService.remove(id);
   }

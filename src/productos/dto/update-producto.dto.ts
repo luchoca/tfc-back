@@ -1,10 +1,13 @@
-import { PartialType } from '@nestjs/mapped-types';
-import { CreateProductoDto } from './create-producto.dto';
+import { PartialType } from "@nestjs/mapped-types";
+import { Ingrediente } from "src/ingredientes/schema/ingrediente.schema";
+import { CreateProductoDto } from "./create-producto.dto";
 
 export class UpdateProductoDto extends PartialType(CreateProductoDto) {
-  id: number;
+  idProducto: number;
   nombre: string;
   stock: number;
   precio: number;
   image: string;
+  idCliente?: string;
+  ingredientes: Ingrediente[];
 }

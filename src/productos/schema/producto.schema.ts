@@ -1,12 +1,16 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
-import { Ingrediente } from "src/ingredientes/schema/ingrediente.schema";
+import mongoose, { Types } from "mongoose";
+import {
+  Ingrediente,
+  IngredienteSchema,
+} from "src/ingredientes/schema/ingrediente.schema";
 
 export type ProductoDocument = Producto & Document;
 
 @Schema()
 export class Producto {
-  @Prop()
-  idProducto: number;
+  @Prop({ type: Types.ObjectId })
+  idProducto: Types.ObjectId;
   @Prop()
   nombre: string;
   @Prop()
@@ -17,8 +21,8 @@ export class Producto {
   image: string;
   @Prop()
   idCliente?: string;
-  @Prop()
-  ingredientes: Ingrediente[];
+  @Prop([{ type: mongoose.Schema.Types.ObjectId, ref: Ingrediente.name }])
+  ingredientes?: Ingrediente[];
 }
 
 export const ProductoSchema = SchemaFactory.createForClass(Producto);

@@ -8,7 +8,11 @@ export class UpdateProductoDto extends PartialType(CreateProductoDto) {
   nombre: string;
   stock: number;
   precio: number;
-  image: string;
+  imagen: string;
+  descripcion: string;
+  habilitado: boolean;
+  minimo: number;
+  maximo: number;
   idCliente?: string;
   ingredientes: Ingrediente[];
 }

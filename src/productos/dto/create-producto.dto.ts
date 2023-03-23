@@ -6,7 +6,11 @@ export class CreateProductoDto {
   nombre: string;
   stock: number;
   precio: number;
-  image: string;
+  imagen: string;
+  descripcion: string;
+  habilitado: boolean;
+  minimo: number;
+  maximo: number;
   idCliente?: string;
   ingredientes: Ingrediente[];
 }

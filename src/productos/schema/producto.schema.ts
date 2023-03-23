@@ -2,7 +2,6 @@ import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import mongoose, { Types } from "mongoose";
 import {
   Ingrediente,
-  IngredienteSchema,
 } from "src/ingredientes/schema/ingrediente.schema";
 
 export type ProductoDocument = Producto & Document;
@@ -18,7 +17,15 @@ export class Producto {
   @Prop()
   precio: number;
   @Prop()
-  image: string;
+  imagen: string;
+  @Prop()
+  descripcion: string;
+  @Prop()
+  habilitado: boolean;
+  @Prop()
+  minimo: number;
+  @Prop()
+  maximo: number;
   @Prop()
   idCliente?: string;
   @Prop([{ type: mongoose.Schema.Types.ObjectId, ref: Ingrediente.name }])

@@ -7,8 +7,6 @@ export class Ingrediente {
   @Prop()
   idIngrediente: string;
   @Prop()
-  descripcion: string;
-  @Prop()
   nombre: string;
   @Prop()
   precio: number;

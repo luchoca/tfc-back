@@ -13,7 +13,7 @@ import { Carrito, CarritoDocument } from "./schemas/carrito.schema";
 @Injectable()
 export class CarritoService {
   private carrito: Carrito[];
-  // private prodComprados: Producto[];
+  private productModel: Producto[];
   constructor(
     @InjectModel(Carrito.name)
     private carritoModule: Model<CarritoDocument>,
@@ -21,7 +21,7 @@ export class CarritoService {
     private productoModule: Model<ProductoDocument>
   ) {}
 
-  async create(_createCarritoDto: CreateCarritoDto) {
+  create(_createCarritoDto: CreateCarritoDto) {
     return this.carritoModule.create(_createCarritoDto);
   }
 

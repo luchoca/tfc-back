@@ -1,7 +1,6 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import mongoose from "mongoose";
 import { Ingrediente } from "src/ingredientes/schema/ingrediente.schema";
-import { Usuario } from "src/usuario/schema/usuario.schema";
 
 export type ProductoDocument = Producto & Document;
 

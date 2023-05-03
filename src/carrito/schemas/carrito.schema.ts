@@ -10,7 +10,9 @@ export class Carrito {
   idCarrito: number;
   @Prop()
   idUsuario: number;
+  @Prop()
+  date: Date;
   @Prop([{ type: mongoose.Schema.Types.ObjectId, ref: Producto.name }])
-  prodComprados: Producto[];
+  productsPurchased: Producto[];
 }
 export const CarritoSchema = SchemaFactory.createForClass(Carrito);
